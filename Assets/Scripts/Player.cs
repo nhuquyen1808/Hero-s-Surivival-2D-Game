@@ -41,56 +41,48 @@ namespace DevDuck
         }
 
         void Start()
-        {
-            rb = GetComponent<Rigidbody2D>();
-            anim = GetComponent<Animator>();
-            currrentHealth = maxHealth;
-            healthBar.SetMaxHealth(maxHealth);
-        }
+ {
+     rb = GetComponent<Rigidbody2D>();
 
-        void Update()
-        {
-            ProcessInput();
-            Flip();
-            //  detectEnemies();
-            Attack();
-        }
+ }
 
-        private void FixedUpdate()
-        {
-            StatePlayer();
-        }
+ void Update()
+ {
+     ProcessInput();
+     Flip();
 
-        void ProcessInput()
-        {
-            moveX = _joyStick.Horizontal;
-            moveY = _joyStick.Vertical;
-            moveDirection = new Vector2(moveX, moveY).normalized;
-        }
+ }
 
-        void StatePlayer()
-        {
-            rb.velocity = new Vector2(moveDirection.x * speed, moveDirection.y * speed);
+ private void FixedUpdate()
+ {
+     Movement();
+ }
 
-            if (moveDirection.x != 0f)
-            {
-                anim.Play("Run");
-            }
-            else if (moveDirection.x == 0f && !isAttack)
-            {
-                anim.Play("Idle");
-            }
-        }
-        void Flip()
-        {
-            if (isFacingRight && moveX > 0f || !isFacingRight && moveX < 0f)
-            {
-                isFacingRight = !isFacingRight;
-                Vector2 localScale = transform.localScale;
-                localScale.x *= -1f;
-                transform.localScale = localScale;
-            }
-        }
+ void ProcessInput()
+ {
+     moveX = _joyStick.Horizontal;
+     moveY = _joyStick.Vertical;
+     moveDirection = new Vector2(moveX, moveY).normalized;
+     
+ }
+
+ void Movement()
+ {
+     rb.velocity = new Vector2(moveDirection.x * speed, moveDirection.y * speed);
+ }
+
+
+ void Flip()
+ {
+     if (isFacingRight && moveX > 0f || !isFacingRight && moveX < 0f)
+     {
+         isFacingRight = !isFacingRight;
+         Vector2 localScale = transform.localScale;
+         localScale.x *= -1f;
+         transform.localScale = localScale;
+
+     }
+ }
         float timer;
 
         public void Attack()
