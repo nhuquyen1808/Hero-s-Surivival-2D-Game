@@ -12,8 +12,21 @@ public class MenuFunction : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    public void pause()
+    {
+        //SceneManager.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void Continue()
+    {
+        //SceneManager.SetActive(true);
+        Time.timeScale = 1;
+    }
+
     public void exit()
     {
-        Application.Quit();
+        //Application.Quit();
+        Debug.Log("QUIT");
     }
 }
