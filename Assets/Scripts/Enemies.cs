@@ -95,7 +95,7 @@ using System.Data.Common;
                     Debug.Log("Player Get Damage");
                     StartCoroutine(TimeToAttackPlayer());
                     isEnemyAttack = true;
-                    //Player.instance.currrentHealth -= damage;
+                    Player.instance.currrentHealth -= damage;
                     Player.instance.TakeDamage(damage);
                 }
 
