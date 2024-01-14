@@ -120,7 +120,7 @@ namespace DevDuck
         }
         IEnumerator checkAttack()
         {
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.1f);
             isAttack = false;
         }
 
@@ -130,7 +130,7 @@ namespace DevDuck
             healthBar.SetHealth(currrentHealth);
             if (currrentHealth <= 0)
             {
-                //  Debug.Log("PlayerDead");
+                Debug.Log("PlayerDead");
             }
         }
         public bool isDetectEnemy;

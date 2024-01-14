@@ -33,8 +33,8 @@ namespace DevDuck
         }
         void Start()
         {
-            // SetDataEnemies();
-            // SetMaxEnemies();
+            //SetDataEnemies();
+            //SetMaxEnemies();
         }
 
         private void Update()
@@ -46,15 +46,15 @@ namespace DevDuck
         {
             if (indexLevel == 1)
             {
-                maxEnemyIns = 50;
+                maxEnemyIns = 7;
             }
             if (indexLevel == 2)
             {
-                maxEnemyIns = 70;
+                maxEnemyIns = 10;
             }
             if (indexLevel == 3)
             {
-                maxEnemyIns = 100;
+                maxEnemyIns = 13;
             }
         }
 

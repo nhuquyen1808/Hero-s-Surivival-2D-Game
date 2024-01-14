@@ -58,11 +58,11 @@ using System.Data.Common;
                 CheckHp();
             }
 
-            /*  if (collision.gameObject.CompareTag("DroneProjectile"))
-              {
+            if (collision.gameObject.CompareTag("DroneProjectile"))
+            {
                   hp -= 1;
                   CheckHp();
-              }*/
+            }
 
             if (collision.gameObject.CompareTag("Player"))
             {
@@ -103,7 +103,7 @@ using System.Data.Common;
         }
         IEnumerator TimeToAttackPlayer()
         {
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.3f);
             isEnemyAttack = false;
         }
 
